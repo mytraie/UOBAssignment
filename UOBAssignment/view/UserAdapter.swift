@@ -14,7 +14,7 @@ protocol UserAdapterDelegate: class {
 
 class UserAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     
-    let identifier = "UserInfoCell"
+    let identifier = "customcell"
     var users: [Data]?
     weak var delegate: UserAdapterDelegate?
     
@@ -41,3 +41,5 @@ class UserAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+

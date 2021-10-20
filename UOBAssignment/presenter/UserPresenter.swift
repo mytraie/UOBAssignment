@@ -8,20 +8,21 @@
 
 import UIKit
 
-protocol UserView: NSObjectProtocol {
+protocol UserView: NSObjectProtocol{
     func showToast(message: String, duration: Double)
     func startLoading()
     func finishLoading()
     func setUser(users: [Data])
     func setEmptyUsers()
+    func users() -> [Data]
 }
 
 class UserPresenter {
-    private let userService: Networking
+    private let userService: UserServiceProtocol
     weak private var userView: UserView?
     
-    init() {
-        self.userService = Networking.init()
+    init(service: UserServiceProtocol) {
+        self.userService = service
     }
     
     func attachView(view: UserView) {
@@ -32,9 +33,13 @@ class UserPresenter {
         userView = nil
     }
     
+    func view() -> UserView {
+        return userView!
+    }
+    
     func getUsers() {
         userView?.startLoading()
-        Networking.sharedInstance.getUsers{[weak self] result in
+        userService.fetchUsers{[weak self] result in
             DispatchQueue.main.async{
                 switch result {
                 case .failure(let error):

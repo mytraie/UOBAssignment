@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var userTableView: UITableView!
+    @IBOutlet weak var userTableView: UITableView!
     
     let adapter = UserAdapter()
-    let presenter = UserPresenter()
+    let presenter = UserPresenter(service: UserService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +21,14 @@ class ViewController: UIViewController {
         adapter.delegate = self
         userTableView.delegate = adapter.self
         userTableView.dataSource = adapter
-        userTableView.showsHorizontalScrollIndicator = false
+       // userTableView.showsHorizontalScrollIndicator = false
         userTableView.showsVerticalScrollIndicator = true
         userTableView.translatesAutoresizingMaskIntoConstraints = false
-        userTableView.separatorStyle = .singleLine
-        userTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-        userTableView.rowHeight = UITableView.automaticDimension
-        userTableView.estimatedRowHeight = 100
-        userTableView.backgroundColor = .white
+      //  userTableView.separatorStyle = .singleLine
+      //  userTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+      //  userTableView.rowHeight = UITableView.automaticDimension
+      //  userTableView.estimatedRowHeight = 100
+      //  userTableView.backgroundColor = .white
         
         presenter.getUsers()
     }
@@ -43,6 +43,10 @@ extension ViewController: UserAdapterDelegate {
 }
 
 extension ViewController: UserView {
+    func users() -> [Data] {
+        return adapter.users!
+    }
+    
     func showToast(message: String, duration: Double = 1) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.view.backgroundColor = .black
@@ -73,7 +77,7 @@ extension ViewController: UserView {
     func setEmptyUsers() {
         userTableView.isHidden = true
     }
-    
+        
     
     
 }
