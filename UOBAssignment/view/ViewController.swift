@@ -21,14 +21,9 @@ class ViewController: UIViewController {
         adapter.delegate = self
         userTableView.delegate = adapter.self
         userTableView.dataSource = adapter
-       // userTableView.showsHorizontalScrollIndicator = false
         userTableView.showsVerticalScrollIndicator = true
         userTableView.translatesAutoresizingMaskIntoConstraints = false
-      //  userTableView.separatorStyle = .singleLine
-      //  userTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-      //  userTableView.rowHeight = UITableView.automaticDimension
-      //  userTableView.estimatedRowHeight = 100
-      //  userTableView.backgroundColor = .white
+        userTableView.separatorStyle = .singleLine
         
         presenter.getUsers()
     }
@@ -50,7 +45,7 @@ extension ViewController: UserView {
     func showToast(message: String, duration: Double = 1) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.view.backgroundColor = .black
-        alert.view.alpha = 0.6
+        alert.view.alpha = 1.0
         alert.view.layer.cornerRadius = 15
         
         self.present(alert, animated: false)

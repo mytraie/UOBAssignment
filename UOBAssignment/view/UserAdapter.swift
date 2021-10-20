@@ -28,6 +28,9 @@ class UserAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
         let user = users?[indexPath.row]
         cell.userFirstName.text = user?.first_name
         cell.userDP.loadImage(at: URL(string: user!.avatar)!)
+        cell.userEmail.text = user?.email
+        cell.userEmail.numberOfLines = 2
+        cell.selectionStyle = .none
         return cell
     }
     

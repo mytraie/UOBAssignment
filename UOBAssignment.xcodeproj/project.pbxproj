@@ -22,6 +22,9 @@
 		10630B18271EFCC70038017E /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10630B17271EFCC70038017E /* UIImageLoader.swift */; };
 		10630B1A271F040C0038017E /* UserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10630B19271F040C0038017E /* UserAdapter.swift */; };
 		10630B1C271F073B0038017E /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10630B1B271F073B0038017E /* UserPresenter.swift */; };
+		10630B24271F1A2D0038017E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10630B23271F1A2D0038017E /* UserService.swift */; };
+		10630B27271F20FA0038017E /* UserServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10630B25271F208F0038017E /* UserServiceMock.swift */; };
+		10630B29271F2A120038017E /* ViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10630B28271F2A120038017E /* ViewControllerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		10630B17271EFCC70038017E /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
 		10630B19271F040C0038017E /* UserAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdapter.swift; sourceTree = "<group>"; };
 		10630B1B271F073B0038017E /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
+		10630B23271F1A2D0038017E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		10630B25271F208F0038017E /* UserServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceMock.swift; sourceTree = "<group>"; };
+		10630B28271F2A120038017E /* ViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,13 +119,13 @@
 		10630ADB271EA5A10038017E /* UOBAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				10630B2A271FCAE20038017E /* Mock */,
+				10630B22271F19AD0038017E /* services */,
 				10630B21271F13980038017E /* view */,
-				10630B20271F136D0038017E /* api */,
 				10630B1F271F12FB0038017E /* presenter */,
 				10630B14271EF5800038017E /* model */,
 				10630ADC271EA5A10038017E /* AppDelegate.swift */,
 				10630ADE271EA5A10038017E /* SceneDelegate.swift */,
-				10630AE2271EA5A10038017E /* Main.storyboard */,
 				10630AE5271EA5A60038017E /* Assets.xcassets */,
 				10630AE7271EA5A60038017E /* LaunchScreen.storyboard */,
 				10630AEA271EA5A60038017E /* Info.plist */,
@@ -161,24 +167,35 @@
 			path = presenter;
 			sourceTree = "<group>";
 		};
-		10630B20271F136D0038017E /* api */ = {
-			isa = PBXGroup;
-			children = (
-				10630B15271EFA1A0038017E /* ImageLoader.swift */,
-				10630B17271EFCC70038017E /* UIImageLoader.swift */,
-				10630B10271ED5670038017E /* Networking.swift */,
-			);
-			path = api;
-			sourceTree = "<group>";
-		};
 		10630B21271F13980038017E /* view */ = {
 			isa = PBXGroup;
 			children = (
 				10630AE0271EA5A10038017E /* ViewController.swift */,
 				10630B0E271EB5460038017E /* CustomCell.swift */,
 				10630B19271F040C0038017E /* UserAdapter.swift */,
+				10630AE2271EA5A10038017E /* Main.storyboard */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		10630B22271F19AD0038017E /* services */ = {
+			isa = PBXGroup;
+			children = (
+				10630B10271ED5670038017E /* Networking.swift */,
+				10630B17271EFCC70038017E /* UIImageLoader.swift */,
+				10630B15271EFA1A0038017E /* ImageLoader.swift */,
+				10630B23271F1A2D0038017E /* UserService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		10630B2A271FCAE20038017E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				10630B25271F208F0038017E /* UserServiceMock.swift */,
+				10630B28271F2A120038017E /* ViewControllerMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,8 +336,11 @@
 				10630B11271ED5670038017E /* Networking.swift in Sources */,
 				10630ADD271EA5A10038017E /* AppDelegate.swift in Sources */,
 				10630B0F271EB5460038017E /* CustomCell.swift in Sources */,
+				10630B24271F1A2D0038017E /* UserService.swift in Sources */,
 				10630B13271ED5F00038017E /* Users.swift in Sources */,
 				10630B18271EFCC70038017E /* UIImageLoader.swift in Sources */,
+				10630B29271F2A120038017E /* ViewControllerMock.swift in Sources */,
+				10630B27271F20FA0038017E /* UserServiceMock.swift in Sources */,
 				10630ADF271EA5A10038017E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,8 @@ import UIKit
 class CustomCell: UITableViewCell {
     @IBOutlet weak var userDP: UIImageView!
     @IBOutlet weak var userFirstName: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()
