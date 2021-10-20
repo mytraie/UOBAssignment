@@ -1,7 +1,8 @@
-#Swift Demo app (UOB Assignment)
+# Swift Demo app (UOB Assignment)
 Using [ReqRes Dummy data API](https://reqres.in) by [Mytraie Chintapatla](https://github.com/mytraie)
-####Architecture
+
+#### Architecture
  iOS Swift app built to demo simple data fetch into tableview using MVP design pattern.
 
-####Screenshots
+#### Screenshots
 ![Home](screens/demo-home.png "Home")
